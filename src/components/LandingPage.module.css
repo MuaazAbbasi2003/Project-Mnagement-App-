@@ -1,0 +1,21 @@
+.mainTop {
+  width: 100vw;
+  height: 40px;
+  background-color: rgb(245, 245, 245);
+}
+.everythingInsideDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.sidebarMain {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  border-radius: 0px 10px 10px 0px;
+}
+.formDiv {
+  width: 80%;
+  height: 100%;
+  background-color: green;
+}
