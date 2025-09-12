@@ -1,40 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./form.module.css";
 
-export default function Form() {
+export default function Form({ handleSubmit, formData, onChange }) {
+  // Initialize form state
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.field}>
         <label className={styles.label}>TITLE</label>
         <input
           type="text"
           placeholder="Enter title"
-          // value={title}
-          // onChange={(e) => setTitle(e.target.value)}
+          value={formData.title}
+          onChange={(e) => onChange("title", e.target.value)}
           className={styles.input}
         />
       </div>
-
       <div className={styles.field}>
         <label className={styles.label}>DESCRIPTION</label>
         <textarea
           placeholder="Enter description"
-          // value={description}
-          // onChange={(e) => setDescription(e.target.value)}
+          value={formData.description}
+          onChange={(e) => onChange("description", e.target.value)}
           className={styles.textarea}
         />
       </div>
-
       <div className={styles.field}>
         <label className={styles.label}>DUE DATE</label>
         <input
           type="date"
-          // value={dueDate}
-          // onChange={(e) => setDueDate(e.target.value)}
+          value={formData.dueDate}
+          onChange={(e) => onChange("dueDate", e.target.value)}
           className={styles.input}
         />
       </div>
-
       <div className={styles.actions}>
         <button type="button" className={styles.cancel}>
           Cancel
